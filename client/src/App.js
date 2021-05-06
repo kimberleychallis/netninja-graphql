@@ -1,5 +1,7 @@
-import ApolloClient from "apollo-boost";
-import { ApolloProvider } from "react-apollo";
+import React from "react";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client/react";
+// import { gql } from "@apollo/client";
 
 // Components
 import BookList from "./components/BookList";
@@ -7,10 +9,23 @@ import BookList from "./components/BookList";
 // Styles
 import "./App.css";
 
-// apollo client setup
+// Apollo client setup
 const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql",
+  uri: "/graphql",
+  cache: new InMemoryCache(),
 });
+
+// client
+//   .query({
+//     query: gql`
+//       query GetBooks {
+//         books {
+//           name
+//         }
+//       }
+//     `,
+//   })
+//   .then((result) => console.log(result));
 
 function App() {
   return (
