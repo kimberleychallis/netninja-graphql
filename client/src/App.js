@@ -34,7 +34,9 @@ function App() {
         <header className="App-header">
           <h1>Kimberley's Reading List</h1>
         </header>
-        <BookList />
+        <ul className="BookList">
+          <BookList />
+        </ul>
       </div>
     </ApolloProvider>
   );

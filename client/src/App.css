@@ -2,10 +2,10 @@ body {
   background-color: #282c34;
   color: white;
   font-size: 8px;
+  font-family: "Cormorant Garamond";
 }
 
 h1 {
-  font-family: "Cormorant Garamond";
   font-weight: 600;
   font-size: 4rem;
 }
@@ -29,7 +29,7 @@ h1 {
   color: #61dafb;
 }
 
-.BookList ul li {
+.BookList li {
   list-style-type: none;
   font-size: 1rem;
 }
