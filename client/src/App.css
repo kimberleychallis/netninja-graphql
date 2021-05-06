@@ -3,15 +3,16 @@ body {
   color: white;
   font-size: 8px;
   font-family: "Cormorant Garamond";
+  padding: 2rem;
 }
 
 h1 {
   font-weight: 600;
-  font-size: 4rem;
+  font-size: 18ch;
 }
 
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-header {
@@ -29,7 +30,21 @@ h1 {
   color: #61dafb;
 }
 
+.BookList {
+  padding-left: 0;
+  margin-left: 0;
+}
+
 .BookList li {
   list-style-type: none;
   font-size: 1rem;
+}
+
+.AddBook {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.AddBook label {
+  display: block;
 }

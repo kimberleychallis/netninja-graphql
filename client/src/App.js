@@ -5,6 +5,7 @@ import { ApolloProvider } from "@apollo/client/react";
 
 // Components
 import BookList from "./components/BookList";
+import AddBook from "./components/AddBook";
 
 // Styles
 import "./App.css";
@@ -37,6 +38,7 @@ function App() {
         <ul className="BookList">
           <BookList />
         </ul>
+        <AddBook />
       </div>
     </ApolloProvider>
   );

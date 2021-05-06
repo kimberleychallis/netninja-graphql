@@ -1,16 +1,13 @@
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
-
-const getAuthorsQuery = gql`
-  query getAuthors {
-    authors {
-      name
-      age
-    }
-  }
-`;
+import { useQuery } from "@apollo/client";
+import { getAuthorsQuery } from "../queries/queries";
 
 const AddBook = () => {
+  const { loading, error, data } = useQuery(getAuthorsQuery);
+
+  if (loading) return "Loading...";
+  if (error) return `Error! ${error.message}`;
+
   return (
     <form className="AddBook">
       <div className="field">
@@ -23,7 +20,11 @@ const AddBook = () => {
       </div>
       <div className="field">
         <label>Author</label>
-        <select>Select author</select>
+        <select>
+          {data.authors.map((author) => {
+            return <option key={author.id}> {author.name}</option>;
+          })}
+        </select>
       </div>
       <button>+</button>
     </form>
