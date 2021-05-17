@@ -11,13 +11,6 @@ const AddBook = () => {
 
   const [addBookDataMutation, { dataMutation }] = useMutation(addBookMutation);
 
-  // const displayAuthors = () => {
-  //   return data.authors.map((author) => {
-  //     return <option key={author.id}> {author.name}</option>;
-  //   });
-  // };
-
-  // const [bookDetails, setBookDetails] = useState({});
   const [bookName, setBookName] = useState();
   const [bookGenre, setBookGenre] = useState();
   const [bookAuthor, setBookAuthor] = useState();
@@ -26,8 +19,6 @@ const AddBook = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // setBookDetails({ name: bookName, genre: bookGenre, authorID: bookAuthor });
-    // console.log(bookName + " " + bookGenre + " " + bookAuthor);
     addBookDataMutation({
       variables: {
         name: bookName,
@@ -64,15 +55,10 @@ const AddBook = () => {
             );
           })}
         </select>
-        {/* <select>{displayAuthors()}</select> */}
       </div>
       <input type="submit" value="+" />
     </form>
   );
 };
 
-export default // compose(
-//   graphql(getAuthorsQuery, { name: "getAuthorsQuery" }),
-//   graphql(addBookMutation, { name: "addBookMutation" })
-// )
-AddBook;
+export default AddBook;
