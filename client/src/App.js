@@ -16,18 +16,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-// client
-//   .query({
-//     query: gql`
-//       query GetBooks {
-//         books {
-//           name
-//         }
-//       }
-//     `,
-//   })
-//   .then((result) => console.log(result));
-
 function App() {
   return (
     <ApolloProvider client={client}>

@@ -15,8 +15,6 @@ const AddBook = () => {
   const [bookGenre, setBookGenre] = useState();
   const [bookAuthor, setBookAuthor] = useState();
 
-  // console.log(bookDetails);
-
   const handleSubmit = (event) => {
     event.preventDefault();
     addBookDataMutation({

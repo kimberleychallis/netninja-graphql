@@ -18,7 +18,7 @@ const BookDetails = (props) => {
           <p>{data.book.name}</p>
           <p>{data.book.genre}</p>
           <p>{data.book.author.name}</p>
-          <p>Also by this author: </p>
+          <p>All available books by this author: </p>
           <ul className="other-books">
             {data.book.author.books.map((item) => {
               return <li key={item.id}>{item.name}</li>;
