@@ -54,7 +54,7 @@ const AddBook = () => {
           })}
         </select>
       </div>
-      <input type="submit" value="+" />
+      <input type="submit" value="+" className="btn btn-light" />
     </form>
   );
 };

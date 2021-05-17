@@ -27,9 +27,16 @@ const BookList = () => {
   };
 
   return (
-    <div>
-      {displayBooks()}
-      <BookDetails bookID={selectedBook} />
+    <div className="">
+      <div className="row">
+        <div className="col">
+          <h2>Reading list</h2>
+          <ul className="BookList">{displayBooks()}</ul>
+        </div>
+        <div className="col">
+          <BookDetails bookID={selectedBook} />
+        </div>
+      </div>
     </div>
   );
 };
