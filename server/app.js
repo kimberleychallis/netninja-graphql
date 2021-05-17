@@ -7,7 +7,7 @@ const app = express();
 
 // connect to mlab database
 mongoose.connect(
-  "mongodb+srv://kimberley:testing123@cluster.cbmti.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  "mongodb+srv://kachallis:testing123@cluster.cbmti.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 );
 mongoose.connection.once("open", () => {
   console.log("connected to database");

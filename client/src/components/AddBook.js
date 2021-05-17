@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import { useQuery } from "@apollo/client";
-import { getAuthorsQuery, addBookMutation } from "../queries/queries";
+import { useQuery, useMutation } from "@apollo/client";
+import {
+  getAuthorsQuery,
+  addBookMutation,
+  getBooksQuery,
+} from "../queries/queries";
 
 const AddBook = () => {
   const { loading, error, data } = useQuery(getAuthorsQuery);
+
+  const [addBookDataMutation, { dataMutation }] = useMutation(addBookMutation);
 
   // const displayAuthors = () => {
   //   return data.authors.map((author) => {
@@ -11,7 +17,7 @@ const AddBook = () => {
   //   });
   // };
 
-  const [bookDetails, setBookDetails] = useState({});
+  // const [bookDetails, setBookDetails] = useState({});
   const [bookName, setBookName] = useState();
   const [bookGenre, setBookGenre] = useState();
   const [bookAuthor, setBookAuthor] = useState();
@@ -20,8 +26,16 @@ const AddBook = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setBookDetails({ name: bookName, genre: bookGenre, authorID: bookAuthor });
-    // console.log(bookDetails);
+    // setBookDetails({ name: bookName, genre: bookGenre, authorID: bookAuthor });
+    // console.log(bookName + " " + bookGenre + " " + bookAuthor);
+    addBookDataMutation({
+      variables: {
+        name: bookName,
+        genre: bookGenre,
+        authorID: bookAuthor,
+      },
+      refetchQueries: [{ query: getBooksQuery }],
+    });
   };
 
   if (loading) return "Loading...";
@@ -57,4 +71,8 @@ const AddBook = () => {
   );
 };
 
-export default AddBook;
+export default // compose(
+//   graphql(getAuthorsQuery, { name: "getAuthorsQuery" }),
+//   graphql(addBookMutation, { name: "addBookMutation" })
+// )
+AddBook;
