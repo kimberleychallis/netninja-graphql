@@ -11,8 +11,6 @@ const BookList = () => {
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 
-  console.log(selectedBook);
-
   const displayBooks = () => {
     return data.books.map((book) => {
       return (

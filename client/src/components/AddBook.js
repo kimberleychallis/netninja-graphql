@@ -9,7 +9,7 @@ import {
 const AddBook = () => {
   const { loading, error, data } = useQuery(getAuthorsQuery);
 
-  const [addBookDataMutation, { dataMutation }] = useMutation(addBookMutation);
+  const [addBookDataMutation] = useMutation(addBookMutation);
 
   const [bookName, setBookName] = useState();
   const [bookGenre, setBookGenre] = useState();

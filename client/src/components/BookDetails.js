@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useQuery, useMutation } from "@apollo/client";
+import React from "react";
+import { useQuery } from "@apollo/client";
 import { getBookQuery } from "../queries/queries";
 
 const BookDetails = (props) => {
